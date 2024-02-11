@@ -46,3 +46,14 @@ def index(request):
 
 def service(request):
     return render(request, 'service.html')
+
+
+def details_view(request, name):
+    context = {
+        "service_name": name,
+    }
+    return render(request, 'details.html', context)
+
+def location(request):
+    return render(request, 'location.html')
+

@@ -14,11 +14,3 @@ document.getElementById("popupForm").addEventListener("click", function(event) {
   event.stopPropagation();
 });
 
-document.getElementById("openForm").addEventListener("click", function() {
-  document.getElementById("popup").style.display = "block";
-  
-});
-
-document.getElementById("closeForm").addEventListener("click", function() {
-  document.getElementById("popupForm").style.display = "none";
-});

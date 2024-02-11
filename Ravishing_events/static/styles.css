@@ -1,10 +1,18 @@
+
+/* nav bar */
+.navbar a:hover{
+	transform: scale(1.1);
+}
+
+
+
 /* Popup container - hidden by default */
 .form-popup {
   display: none;
   position: fixed;
   bottom: 50px;
   right: 50px;
-  border: 3px solid #f1f1f1;
+  /* border: 3px solid #f1f1f1; */
   z-index: 9;
   background-color: #fff;
   padding: 20px;
@@ -65,13 +73,3 @@
 }
 
 
-/* map */
-
-#map {
-  height: 100%;
-}
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}

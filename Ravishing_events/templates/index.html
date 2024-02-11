@@ -6,103 +6,215 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ravishing Events</title>
 
+    <link rel="icon" href="{% static "logo7.png" %}" type="image/x-icon">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    {% block style %}
+    
+    {% endblock style %}
     <link rel="stylesheet" href="{% static "styles.css" %}">
 </head>
 <body>
     
-        <header>
-            <nav class="navbar navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="{% static "logo3.png" %}" alt="" width="30" height="24" class="d-inline-block align-text-top">
-                        Ravishing Events
-                    </a>
-                    <a href="{% url "service" %}">service</a>
-                    <button id="openForm">Open Form</button>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid m-1">
+      
+        <a class="navbar-brand" href="{% url "index" %}">Ravishing Events</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url "service" %}">Service</a>
+            </li>
+            <li class="nav-item">
+              <button class="nav-link active" aria-current="page" id="openForm">Open form</button>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="https://wa.me/919511935519?text=Hello%20there!%20I%20would%20like%20to%20chat." target="_blank">Contact us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url "location" %}" target="_blank">Location</a>
+            </li>
+          </ul>
+          {% if user != 0 %}
+            Hello {{ user.name }}
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    
+    <div class="container-fluid">
+      <div class="row justify-content" style="background-color:  rgb(255, 255, 255);">
+        <div class=" col-12 col-lg-2" style="background-color: rgb(255, 255, 255);" >
+          <p></p>
+          {% block left %}
+          
+          {% endblock left %}
+        </div>
+  
+        <div class="col-12 col-lg-8 " style="background-color: #E5EEF0; ">   
+          <br>
+          {% block main %}
+          
+          <div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="{% static "wedding.jpg" %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Wedding</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
                 </div>
-            </nav>
-        </header>
-        <main>
-            <div class="container-fluid">
-            {% block service %}
-
-            {% if user != 0 %}
-                Hello {{ user.name }}
-            {% endif %}
-
-            <div class="row g-2">
-                <div class="col-12 col-lg-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15087.84206872487!2d72.84296034999998!3d19.021461400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cedb0ea0cd0f%3A0x428a465039995bd0!2sDadar%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1707317409497!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="{% static "birthday.jpg" %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Birthday</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
                 </div>
-                <div class="col-12 col-lg-6">
-                    
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="{% static "holi.jpg" %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Holi</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
                 </div>
+              </div>
+              <div class="carousel-item"data-bs-interval="4000">
+                <img src="{% static "babyshower.jpeg" %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Baby shower</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{% static "Dj.jpg" %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Dj</h5>
+                  <p>Some representative placeholder content for the third slide.</p>
+                </div>
+              </div>
             </div>
-            
-           
-
-            <div id="popupForm" class="form-popup" aria-labelledby="offcanvasDarkLabel" tabindex="-1" id="offcanvasDark">
-                {% if form == 0 %}
-                <form class="form-container" method="post">
-                    {% csrf_token %}
-                    <button id="closeForm" class="close btn-close btn-close-dark" type="button"></button>
-                    <h2>Fill out the form</h2>
-                    <label for="name"><b>Name</b></label>
-                    <input type="text" placeholder="Enter your name" name="name" required>
-                    
-                    <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Enter your email" name="email">
-                    
-                    <label for="phone"><b>Phone Number</b></label>
-                    <input type="tel" placeholder="Enter your phone number" name="phone">
-                    
-                    <button type="submit" class="btn">Submit</button>
-                </form>
-                {% endif %}
-            </div>
-            
-            
-            
-            {% endblock service %}
-
-            <div id="popup" class="form-popup" aria-labelledby="offcanvasDarkLabel" tabindex="-1" id="offcanvasDark" style="display:none">
-                <form class="form-container" method="post">
-                    {% csrf_token %}
-                    <button id="closeForm" class="close btn-close btn-close-dark" type="button"></button>
-                    <h2>Fill out the form</h2>
-                    <label for="name"><b>Name</b></label>
-                    <input type="text" placeholder="Enter your name" name="name" required>
-                    
-                    <label for="email"><b>Email</b></label>
-                    <input type="text" placeholder="Enter your email" name="email">
-                    
-                    <label for="phone"><b>Phone Number</b></label>
-                    <input type="tel" placeholder="Enter your phone number" name="phone">
-                    
-                    <button type="submit" class="btn">Submit</button>
-                </form>
-            </div>
-            </div>
-        </main>
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-
-            <p class="col-md-4 mb-0 text-muted">Ravishing events</p>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          
+          {% endblock main %}
+          <br>
+        </div>
+  
+  
         
-            <a href="http://wa.me/919511935519" class="btn btn-primary">chat with us</a>
         
-            <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-            </ul>   
-        </footer>
+        
+        <div class=" col-12 col-lg-2 m-2" style="background-color: rgb(255, 255, 255);" >
+          <p></p>
+          {% block right %}{% endblock right %}
+        </div>
+      </div>
+    </div>
+
+    <div id="popupForm" class="form-popup" aria-labelledby="offcanvasDarkLabel" tabindex="-1" id="offcanvasDark">
+      {% if form == 0 %}
+      <form class="form-container" method="post">
+          {% csrf_token %}
+          <button id="closeForm" class="close btn-close btn-close-dark" type="button"></button>
+          <h2>Fill out the form</h2>
+          <label for="name"><b>Name</b></label>
+          <input type="text" placeholder="Enter your name" name="name" required>
+          
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter your email" name="email">
+          
+          <label for="phone"><b>Phone Number</b></label>
+          <input type="tel" placeholder="Enter your phone number" name="phone">
+          
+          <button type="submit" class="btn">Submit</button>
+      </form>
+      {% endif %}
+    </div>
+
+    <div id="popup" class="form-popup" aria-labelledby="offcanvasDarkLabel" tabindex="-1" id="offcanvasDark" style="display:none">
+        <form class="form-container" method="post">
+            {% csrf_token %}
+            <button id="close" class="close btn-close btn-close-dark" type="button"></button>
+            <h2>Fill out the form</h2>
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter your name" name="name" required>
+            
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter your email" name="email">
+            
+            <label for="phone"><b>Phone Number</b></label>
+            <input type="tel" placeholder="Enter your phone number" name="phone">
+            
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Find the close button by its ID
+        var closeButton = document.getElementById('close');
+    
+        // Add a click event listener to the close button
+        closeButton.addEventListener('click', function () {
+          // Find the popup by its ID
+          var popup = document.getElementById('popup');
+    
+          // Hide the popup by changing its style display property
+          popup.style.display = 'none';
+        });
+    
+        // Add event listener for opening the form
+        document.getElementById('openForm').addEventListener('click', function () {
+          document.getElementById('popup').style.display = 'block';
+        });
+      });
+    </script>
+      
+  </main>
+  <footer class="d-flex flex-wrap m-3 justify-content-between align-items-center py-3 my-4 border-top">
+
+      <p class="col-md-4 mb-0 text-muted">
+        <img src="{% static "logo7.png" %}" alt="Bootstrap" width="130px" >
+      </p>
+  
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      </a>
+  
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="https://www.instagram.com/ravishing__events?igsh=MTN6dDNpYXF6enFlYQ==" target="_blank" class="nav-link px-2 text-muted">Instagram</a></li>
+        <li class="nav-item"><a href="https://wa.me/919511935519?text=Hello%20there!%20I%20would%20like%20to%20chat."  class="nav-link px-2 text-muted" target="_blank">Whatsapp</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      </ul>   
+  </footer>
       
     
-    <script src="{% static "script.js" %}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="{% static "script.js" %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
 </html>
