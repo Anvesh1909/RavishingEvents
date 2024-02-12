@@ -77,21 +77,20 @@ WSGI_APPLICATION = 'Ravishing_events.wsgi.application'
 
 DATABASES = {
 
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'railway',
-    #     'USER': 'postgres',
-    #     'PASSWORD': '',
-    #     'HOST': '',
-    #     'PORT': '',
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'G6GEb3C1g*4FB6ea6b4A41-cg6A-552A',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': '34767',
+    }
 
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
