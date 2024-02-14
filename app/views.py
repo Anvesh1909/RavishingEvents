@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render,HttpResponse,redirect,reverse
 
-from .models import FormData
+# from .models import FormData
 
 # count=0
 # context={
