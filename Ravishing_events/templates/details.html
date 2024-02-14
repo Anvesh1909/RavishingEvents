@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% load static %}
+
+
+{% block main %}
+
+
+<div class="text text-center text-bg-dark">
+    <h1>{{service_name}}</h1>
+</div>
+
+
+
+<div class="card" >
+  <div class="card-body">
+    <h5 class="card-title">{{ service_name }}</h5>
+    <p class="card-text">{{ discription.disc }}</p>
+    <a href="https://wa.me/919511935519?text=Hello I would like sevice of {{ service_name }}." class="btn btn-primary" class="nav-link px-2 text-muted" target="_blank">Get Details</a>
+  </div>
+  <img src="{% static discription.image %}" class="card-img-bottom" alt="..." > 
+
+</div>
+
+{% endblock main %}

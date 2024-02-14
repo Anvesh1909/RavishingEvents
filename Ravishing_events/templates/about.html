@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static "about.css" %}">
+
+{% endblock style %}
+
+{% block main %}
+<div class="container">
+    <h1>About Us</h1>
+    <p>Welcome to our event organizing company! We are passionate about creating memorable experiences for our clients.</p>
+    <p>Our mission is to [describe your mission/goals].</p>
+    <div class="image-container">
+        <img src="{% static "logo7.png" %}" alt="Event Planner 1">
+        <div class="member-details">
+            <p><strong>John Doe</strong></p>
+            <p><a href="tel:+123456789"><img src="phone_icon.png" alt="Call Us" width="20"></a></p>
+            <p><a href="mailto:johndoe@example.com"><img src="email_icon.png" alt="Email Us" width="20"></a></p>
+            <p><a href="https://www.instagram.com/johndoe/"><img src="instagram_icon.png" alt="Instagram" width="20"></a></p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="{% static "logo7.png" %}" alt="Event Planner 2">
+        <div class="member-details">
+            <p><strong>Jane Smith</strong></p>
+            <p><a href="tel:+987654321"><img src="phone_icon.png" alt="Call Us" width="20"></a></p>
+            <p><a href="mailto:janesmith@example.com"><img src="email_icon.png" alt="Email Us" width="20"></a></p>
+            <p><a href="https://www.instagram.com/janesmith/"><img src="instagram_icon.png" alt="Instagram" width="20"></a></p>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="{% static "logo7.png" %}" alt="Event Planner 3">
+        <div class="member-details">
+            <p><strong>Mark Johnson</strong></p>
+            <p><a href="tel:+111222333"><img src="phone_icon.png" alt="Call Us" width="20"></a></p>
+            <p><a href="mailto:markjohnson@example.com"><img src="email_icon.png" alt="Email Us" width="20"></a></p>
+            <p><a href="https://www.instagram.com/markjohnson/"><img src="instagram_icon.png" alt="Instagram" width="20"></a></p>
+        </div>
+    </div>
+    <!-- Add more team members' details as needed -->
+
+    <p>We specialize in organizing various types of events including weddings, corporate events, and parties.</p>
+    <p>Our services include event planning, venue selection, catering, decoration, and entertainment.</p>
+    <p>Feel free to contact us to make
+</div>
+
+{% endblock main %}
+
+
+{% block right %}{% endblock right %}
