@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block style %}<link rel="stylesheet" href="{% static "details.css" %}">{% endblock style %}
+
+{% block main %}
+
+
+{% comment %} <div class="text text-center text-bg-dark">
+    <h1>{{service_name}}</h1>
+</div>
+ {% endcomment %}
+
+{% comment %} 
+
+    <h5 class="card-title text-center">{{ service_name }} {{plus}} </h5>
+    <p class="card-text">{{ discription.disc }}</p>
+   
+ {% endcomment %}
+
+<div class="card" >
+  <div class="card-body">
+<h1>{{ service_name }} Details</h1>
+
+<p>{{ discription.disc }}</p>
+
+<img src="{% static discription.image %}" class="card-img-bottom" alt="discription.image">
+
+<a href="https://wa.me/919511935519?text=Hello I would like to know about {{ service_name }} service." class="btn btn-primary" target="_blank">Get Details</a>
+
+{% if discription.images %}
+    <h2>Additional Images</h2>
+    {% for image in discription.images %}
+        <img src="{% static 'Haldi/' %}{{ image }}" alt="Image" height="500px">
+    {% endfor %}
+{% endif %}
+  </div>
+</div>
+
+{% endblock main %}
