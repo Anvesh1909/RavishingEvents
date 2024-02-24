@@ -66,7 +66,7 @@ def details_view(request, name):
                 },
     'Dj': {
         
-        'image': 'Dj.jpg',
+        'image': 'DJ.jpg',
                 },
     
     'Catering' : {
