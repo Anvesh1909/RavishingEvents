@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 {% load static %}
 
-{% block style %}<link rel="stylesheet" href="{% static "details.css" %}">{% endblock style %}
+{% block style %}<link rel="stylesheet" href="{% static "css/details.css" %}">{% endblock style %}
 
 {% block main %}
 
@@ -36,7 +36,7 @@
     {% for image in images %}
       <div class="col col-12 col-lg-6">
         <div class="card ">
-          <img class="image" src="{% static service_name %}/{{ image }}" alt="Image" style="height : 500px">
+          <img class="image" src="{% static service_name %}/{{ image }}" alt="Image" >
         </div>
       </div>
     {% endfor %}

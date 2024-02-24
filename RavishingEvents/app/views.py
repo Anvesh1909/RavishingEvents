@@ -86,7 +86,7 @@ def details_view(request, name):
                     },
     'Festive' : {
         'disc' : "hello Festive",
-        'image': 'Festive.jpeg', 
+        'image': 'Festive.jpg', 
                     },
     'Corporate' : {
         'disc' : "hello Corporate",
