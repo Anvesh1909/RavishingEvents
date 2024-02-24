@@ -24,7 +24,7 @@
 
 <p>{{ discription.disc }}</p>
 
-<img src="{% static discription.image %}" class="card-img-bottom" alt="discription.image">
+<img src="{% static discription.image %}" class="card-img-bottom border border-dark" alt="discription.image">
 
 <a href="https://wa.me/919511935519?text=Hello I would like to know about {{ service_name }} service." class="btn btn-primary" target="_blank">Get Details</a>
 {% if images %}
@@ -35,9 +35,9 @@
   {% if images %}
     {% for image in images %}
       <div class="col col-12 col-lg-6">
-        <div class="card ">
-          <img class="image" src="{% static service_name %}/{{ image }}" alt="Image" >
-        </div>
+        
+          <img class="image border border-dark" src="{% static service_name %}/{{ image }}" alt="Image" >
+        
       </div>
     {% endfor %}
   {% endif %}
