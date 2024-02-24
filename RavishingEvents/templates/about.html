@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block style %}
-<link rel="stylesheet" href="{% static "css/about.css" %}">
+{% comment %} <link rel="stylesheet" href="{% static "css/about.css" %}"> {% endcomment %}
 
 {% endblock style %}
 
 {% block main %}
-<div class="container">
+{% comment %} <div class="container">
     <h1>About Us</h1>
     <p>Welcome to our event organizing company! We are passionate about creating memorable experiences for our clients.</p>
     <p>Our mission is to [describe your mission/goals].</p>
@@ -43,9 +43,10 @@
     <p>We specialize in organizing various types of events including weddings, corporate events, and parties.</p>
     <p>Our services include event planning, venue selection, catering, decoration, and entertainment.</p>
     <p>Feel free to contact us to make
-</div>
+</div> {% endcomment %}
 
 {% endblock main %}
 
 
 {% block right %}{% endblock right %}
+
