@@ -15,7 +15,6 @@ import os
 
 
 
-
 def index(request):
     # global count,context
     
@@ -58,31 +57,31 @@ def details_view(request, name):
 
     service = {
     'Birthday': {
-        'disc' : "hello birthday",
+        
         'image': 'birthday.jpg',
                 },
     'Wedding': {
-        'disc' : "hello wedding",
+        
         'image': 'wedding.jpg',
                 },
     'Dj': {
-        'disc' : "hello dj",
+        
         'image': 'dj.jpg',
                 },
     
     'Catering' : {
-        'disc' : "hello Catering",
+        
         'image': 'Catering.jpg',
               },
     
     'Haldi' : {
-        'disc' : "hello haldi",
+        
         'image': 'haldi.jpg',
         
                },
     'Babyshower' : {
-        'disc' : "We provide Baby Shower Decorations In Thane, Dombivli, Kalyan, Navi Mumbai, Mumbai, Ambernath, Badlapur. We are based in Dombivli but provide services across these mentioned areas. We provide real flower jewellery for Baby Shower decoration at home ie Dohale Jevan decoration at home. Baby Shower decoration cost is very pocket friendly and at the same time we provide best baby shower decoration in same cost.",
-        'image': 'babyshower.jpeg', 
+        'disc' : "",
+        'image': 'babyshower.jpg', 
                     },
     'Festive' : {
         'disc' : "hello Festive",

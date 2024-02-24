@@ -62,9 +62,10 @@
       </div>
     </nav>
   </header>
-  <main style="background-color: rgb(255, 207, 150);">
+  
+  <main style="background-color: rgb(255, 207, 150);" class="border border-dark">
     
-
+    <br>
 
     <div class="container-fluid">
       <div class="row row-cols-md-3 justify " >
@@ -107,7 +108,7 @@
           {% endblock left %}
         </div>
   
-        <div class="col-12 col-lg-8 p-2 " style="background-color: rgb(246, 253, 195); ">   
+        <div class="col-12 col-lg-8 p-2 border border-dark" style="background-color: rgb(246, 253, 195); ">   
           <br>
           {% block main %}
           
@@ -143,7 +144,7 @@
                 </div>
               </div>
               <div class="carousel-item"data-bs-interval="4000">
-                <img src="{% static "babyshower.jpeg" %}" class="d-block w-100" alt="...">
+                <img src="{% static "babyshower.jpg" %}" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Baby shower</h5>
                   <p>Some representative placeholder content for the third slide.</p>
@@ -224,7 +225,7 @@
     {% endblock right %} 
     
 
-    <div id="popupForm" class="form-popup" aria-labelledby="offcanvasDarkLabel" tabindex="-1" id="offcanvasDark">
+    <div id="popupForm" class="form-popup border border-dark" aria-labelledby="offcanvasDarkLabel" tabindex="-1" id="offcanvasDark">
       
       <form class="form-container" name='submit-to-google-sheet'>
          
@@ -248,7 +249,7 @@
       
     </div>
 
-    <div id="popup" class="form-popup" aria-labelledby="offcanvasDarkLabel" tabindex="-1" id="offcanvasDark" style="display:none">
+    <div id="popup" class="form-popup border border-dark" aria-labelledby="offcanvasDarkLabel" tabindex="-1" id="offcanvasDark" style="display:none">
         <form class="form-container" name='submit-to-google-sheet'>
        
             <button id="close" class="close btn-close btn-close-dark" type="button"></button>

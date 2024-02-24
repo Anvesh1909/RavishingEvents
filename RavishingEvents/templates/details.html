@@ -20,9 +20,37 @@
 
 <div class="card" >
   <div class="card-body">
-<h1>{{ service_name }} Details</h1>
+    
 
-<p>{{ discription.disc }}</p>
+<div class="text text-center shadow p-1 mb-2  " style="background-color : rgb(142, 122, 181)">
+<h1 >{{ service_name }} 
+  {% if service_name == "Haldi" %} & Mehndi{% endif %}
+  {% if service_name == "Babyshower" %} & Naming ceremony{% endif %}
+  Details</h1>
+</div>
+{% if service_name == "Wedding" %}
+
+<p class="text-start m-3">Ravishing Event Management's team assures to provide you everything you need to have a fabulous wedding. From creating a guest list for you to managing your vendors and coordinating everything, you won't have to worry about a single thing with Ravishing Event Management.</p>
+
+<p class="text-start m-3 ">Ravishing Events has a customised and budget-oriented idea that you can choose and personalise according to your conditions, preferences and price scale. The broad array of amenities offered by them includes the following:
+  <ul>
+    <li>Photography/ Videography</li>
+    <li>Venue Selection</li>
+    <li>DJ & entertainment</li>
+    <li>Guests transfers</li>
+    <li>Milk</li>
+    <li>Invitations</li>
+  </ul>
+</p>
+
+{% endif %}
+
+{% if service_name == "Babyshower" %}
+
+<p>We provide Baby Shower Decorations In Thane, Dombivli, Kalyan, Navi Mumbai, Mumbai, Ambernath, Badlapur. We are based in Dombivli but provide services across these mentioned areas. We provide real flower jewellery for Baby Shower decoration at home ie Dohale Jevan decoration at home. Baby Shower decoration cost is very pocket friendly and at the same time we provide best baby shower decoration in same cost.</p>
+
+{% endif %}
+
 
 <img src="{% static discription.image %}" class="card-img-bottom border border-dark" alt="discription.image">
 
@@ -36,7 +64,7 @@
     {% for image in images %}
       <div class="col col-12 col-lg-6">
         
-          <img class="image border border-dark" src="{% static service_name %}/{{ image }}" alt="Image" >
+          <img class="image border border-dark shadow mb-5 bg-body-tertiary rounded" src="{% static service_name %}/{{ image }}" alt="Image" >
         
       </div>
     {% endfor %}
