@@ -102,7 +102,7 @@
           {% endblock left %}
         </div>
   
-        <div class="col-12 col-lg-8 p-2 border border-dark" style="background-color: rgb(246, 253, 195); ">   
+        <div class="col-12 col-lg-9   p-2 border border-dark" style="background-color: rgb(246, 253, 195); ">   
           <br>
           {% block main %}
           
@@ -304,9 +304,9 @@
         </div>
   
   
+       
         
-        
-        {% block right %}
+        {% comment %} {% block right %}
         <div class=" col-12 col-lg-2 p-2 d-inline " style="background-color: rgb(255, 207, 150);"  >
           <p></p>
           
@@ -315,7 +315,7 @@
         </div>
       </div>
     </div>
-    {% endblock right %} 
+    {% endblock right %}  {% endcomment %}
     
 
     
@@ -323,8 +323,10 @@
     
 
     <br>
-
-  
+    <p>
+      
+    </p>
+    
   </main>
   <div id="popup" class="form-popup border border-dark" aria-labelledby="offcanvasDarkLabel" tabindex="-1" id="offcanvasDark" style="display:none">
     <form class="form-container" name='submit-to-google-sheet'>
