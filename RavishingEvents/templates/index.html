@@ -67,13 +67,13 @@
           <p></p>
           {% block left %}
           
-          <div class="Services "  style="background-color:  rgb(246, 253, 195); box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);">
-            <div class="text text-center">
+          <div class="p-2"  style="background-color:  rgb(246, 253, 195); box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); ">
+            <div class="text text-center ">
               <h1>Services</h1>
             </div>
             
-            <div class="border text-center" style=" ">
-                <ul class="list-group list-group-flush" >
+            <div class="border text-center">
+                <ul class="list-group list-group" >
                   <li class="list-group-item"><a class="btn btn-outline-dark" href="{% url 'details' name='Wedding' %}">Wedding</a></li>
                   <li class="list-group-item"><a class="btn btn-outline-dark" href="{% url 'details' name='Haldi' %}">Haldi & Mehndi</a></li>
                   <li class="list-group-item"><a class="btn btn-outline-dark" href="{% url 'details' name='Catering' %}">Catering</a></li>
@@ -98,7 +98,7 @@
               </a>
             </div>
           </div> {% endcomment %}
-
+          <br>
           {% endblock left %}
         </div>
   
@@ -199,7 +199,7 @@
             <div class="row">
               <div class="col"><img src="{% static "Icons/hand.png" %}" alt="Affordable Decorations" class="image" height="70px">
                 <h2 class="heading">Ancillary Services</h2>
-                <p class="text">Putting wedding events, successfully, together requires much more than just having the essentials in place. We, at KYC Events, provide a host of services, which include designing and styling wedding dresses, customizing we</p>
+                <p class="text">Putting wedding events, successfully, together requires much more than just having the essentials in place. We, at Ravishing Events, provide a host of services, which include designing and styling wedding dresses, customizing wedding invitations and providing personalized communication among others.</p>
               </div>
               <div class="col"> <img src="{% static "Icons/food-service.png" %}" alt="Affordable Decorations" class="image" height="70px">
                 <h2 class="heading">Hospitality</h2>
@@ -324,7 +324,7 @@
 
     <br>
     <p>
-      
+
     </p>
     
   </main>
@@ -369,9 +369,10 @@
   </footer>
       
 
-  {% block js %}{% endblock js %}
-    
+  {% block js %}
   <script src="{% static "javascript/script.js" %}"></script>
+  {% endblock js %}
+    
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
