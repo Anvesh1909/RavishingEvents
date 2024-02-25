@@ -43,7 +43,6 @@
     </div>
   </div>
 
-  {% comment %} catering should be added {% endcomment %}
   <div class="col">
     <div class="card mb-3">
     
@@ -51,7 +50,6 @@
       <div class="card-body">
         <h5 class="card-title">Catering</h5>
         <p class="card-text">Where food meats imagination </p>
-        <br><br>
         <a href="{% url 'details' name='Catering' %}" class="btn btn-primary m-1">View Details</a>
 
       </div>
@@ -66,7 +64,6 @@
       <div class="card-body">
         <h5 class="card-title">DJ & Sound</h5>
         <p class="card-text">Rhythm alchemist turning beats into gold.</p>
-
         <a href="{% url 'details' name='Dj' %}" class="btn btn-primary m-1">View Details</a>
 
       </div>
@@ -80,7 +77,6 @@
         <div class="card-body">
             <h5 class="card-title">Babyshower & Naming Ceremony</h5>
             <p class="card-text">Showering love on the parents-to-be!</p>
-            
             <a href="{% url 'details' name='Babyshower' %}" class="btn btn-primary m-1">View Details</a>
         </div>
     </div>
@@ -93,7 +89,6 @@
       <div class="card-body">
         <h5 class="card-title">Birthday</h5>
         <p class="card-text">You’re worth celebrating every day.</p>
-        <br>
         <a href="{% url 'details' name='Birthday' %}" class="btn btn-primary m-1">View Details</a>
       </div>
     
@@ -110,7 +105,7 @@
       <img src="{% static "Festive.jpg" %}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">Festive</h5>
-        <p class="card-text">Tradition meet celebration in name of festival.</p>
+        <p class="card-text">Tradition meet celebration in name of festival.</p>
         <a href="{% url 'details' name='Festive' %}" class="btn btn-primary m-1">View Details</a>
       </div>
     
@@ -124,6 +119,7 @@
       <div class="card-body">
         <h5 class="card-title">Corporate</h5>
         <p class="card-text">Experience the difference excellence makes.</p>
+        <br>
         <a href="{% url 'details' name='Corporate' %}" class="btn btn-primary m-1">View Details</a>
       </div>
     
@@ -139,5 +135,11 @@
 
 
 {% endblock main %}
+
+
+{% block js %}
+<script src="{% static "javascript/form.js" %}"></script>
+{% endblock js %}
+
 
 {% block right %}{% endblock right %}
