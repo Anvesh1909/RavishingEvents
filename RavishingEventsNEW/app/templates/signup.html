@@ -1,0 +1,114 @@
+{% extends "index.html" %}
+{% load static %}
+{% block main %}
+
+<style>
+  body {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    margin: 50px auto;
+  }
+
+  .form-container h1 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+
+  .form-group label {
+    font-weight: bold;
+    color: #555;
+  }
+
+  .form-control {
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+
+  .btn-primary {
+    background-color: #6a11cb;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px;
+    transition: background-color 0.3s;
+  }
+
+  .btn-primary:hover {
+    background-color: #2575fc;
+  }
+
+  .btn-secondary {
+    color: #6a11cb;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .btn-group .btn {
+    border-radius: 8px;
+  }
+
+  .background .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    width: 150px;
+    height: 150px;
+  }
+
+  .background .shape:nth-child(1) {
+    top: -50px;
+    left: -50px;
+  }
+
+  .background .shape:nth-child(2) {
+    bottom: -50px;
+    right: -50px;
+  }
+</style>
+
+
+<!-- Form Container -->
+<div class="form-container">
+  <h1>Sign Up</h1>
+  <form action="" method="post">
+    {% csrf_token %}
+    <p style="color: red;">{{ a }}</p>
+
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" placeholder="Enter Username" name="username" id="username">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" placeholder="Email or Phone" name="email" id="email">
+    </div>
+
+    <div class="form-group">
+      <label for="password1">Password</label>
+      <input type="password" class="form-control" placeholder="Password" id="password1" name="password1">
+    </div>
+
+    <div class="form-group">
+      <label for="password2">Confirm Password</label>
+      <input type="password" class="form-control" placeholder="Confirm Password" id="password2" name="password2">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+    <a href="{% url 'login' %}" class="btn-secondary">Already have an account?</a>
+  </form>
+</div>
+
+{% endblock main %}

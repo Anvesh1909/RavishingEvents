@@ -1,0 +1,140 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static "css/services.css" %}">
+{% endblock style %}
+
+{% block main %}
+<div class="text text-center shadow p-1 mb-2  ">
+  <h1>Services</h1>
+</div>
+
+<div class="row row-cols-md-2 justify-content-center p-1">
+  <div class="col">
+    <div class="card mb-3">
+      
+    
+      <img src="{% static "wedding.jpg" %}" class="card-img-top" alt="..." >
+      <div class="card-body">
+        <h5 class="card-title">Wedding</h5>
+        <p class="card-text">A bond that will last a lifetime. </p>
+        <br> 
+
+        <a href="{% url 'details' name='Wedding' %}" class="btn btn-primary m-1">View Details</a>
+
+      </div>
+    
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-3">
+    
+      <img src="{% static "haldi.jpg" %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Haldi & Mehndi</h5>
+        <p class="card-text">Happiness is being... surrounded by Haldi and Mehndi.</p>
+        
+
+        <a href="{% url 'details' name='Haldi' %}" class="btn btn-primary m-1">View Details</a>
+
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-3">
+    
+      <img src="{% static "Catering.jpg" %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Catering</h5>
+        <p class="card-text">Where food meats imagination </p>
+        <a href="{% url 'details' name='Catering' %}" class="btn btn-primary m-1">View Details</a>
+
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-3">
+    
+      <img src="{% static "DJ.jpg" %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">DJ & Sound</h5>
+        <p class="card-text">Rhythm alchemist turning beats into gold.</p>
+        <a href="{% url 'details' name='Dj' %}" class="btn btn-primary m-1">View Details</a>
+
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-3">
+        <img src="{% static "babyshower.jpg" %}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Babyshower & Naming Ceremony</h5>
+            <p class="card-text">Showering love on the parents-to-be!</p>
+            <a href="{% url 'details' name='Babyshower' %}" class="btn btn-primary m-1">View Details</a>
+        </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-3">
+  
+      <img src="{% static "birthday.jpg" %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Birthday</h5>
+        <p class="card-text">You’re worth celebrating every day.</p>
+        <a href="{% url 'details' name='Birthday' %}" class="btn btn-primary m-1">View Details</a>
+      </div>
+    
+    </div>
+  </div>
+
+
+ 
+ 
+
+  <div class="col">
+    <div class="card mb-3">
+  
+      <img src="{% static "Festive.jpg" %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Festive</h5>
+        <p class="card-text">Tradition meet celebration in name of festival.</p>
+        <a href="{% url 'details' name='Festive' %}" class="btn btn-primary m-1">View Details</a>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="card mb-3">
+  
+      <img src="{% static "Corporate.jpeg" %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Corporate</h5>
+        <p class="card-text">Experience the difference excellence makes.</p>
+        <a href="{% url 'details' name='Corporate' %}" class="btn btn-primary m-1">View Details</a>
+      </div>
+    
+    </div>
+  </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock main %}
+
+
+{% block left %}{% endblock left %}
+

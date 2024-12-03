@@ -1,0 +1,348 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ravishing Events</title>
+
+    <link rel="icon" href="{% static 'Icons/RavishingEvents.png' %}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    {% block style %}
+    {% endblock style %}
+    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+
+    
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <!-- Navbar brand -->
+        <a class="navbar-brand fw-bold" href="{% url "index" %}">Ravishing Events</a>
+
+  
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+          aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active d-flex align-items-center" aria-current="page" href="{% url 'service' %}">
+                <i class="fas fa-cogs pe-2"></i>Service
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link active d-flex align-items-center" href="{% url 'location' %}">
+                <i class="fas fa-map-marker-alt pe-2"></i>Location
+              </a>
+            </li>
+  
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <span class="nav-link text-dark">Welcome, {{ user.username }}</span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="{% url 'logout' %}">
+                  <i class="fas fa-sign-out-alt pe-2"></i>Logout
+                </a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="{% url 'login' %}">
+                  <i class="fas fa-sign-in-alt pe-2"></i>Login
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" href="{% url 'signup' %}">
+                  <i class="fas fa-user-plus pe-2"></i>Sign Up
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+  
+          <!-- Right links -->
+          <div class="d-flex align-items-center">
+            <a class="btn btn-outline-success p-2 ms-2" href="https://wa.me/919511935519?text=Hello%20there!%20I%20would%20like%20to%20chat."
+              target="_blank">
+              <img src="{% static 'Icons/whatsapp.png' %}" alt="Whatsapp" height="20" class="me-2"> Whatsapp
+            </a>
+            <a class="btn btn-outline-danger p-2 ms-2" href="https://www.instagram.com/ravishing__events?igsh=MTN6dDNpYXF6enFlYQ=="
+              target="_blank">
+              <img src="{% static 'Icons/instagram.png' %}" alt="Instagram" height="20" class="me-2"> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <style>
+    .navbar {
+      border-bottom: 1px solid #ddd;
+    }
+  
+  
+  
+    .navbar .nav-item .nav-link:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border-radius: 0.25rem;
+      color: #000;
+    }
+  
+    .navbar-toggler {
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+  
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+  </style>
+  
+
+  <main class="border border-dark p ps-5 pe-5">
+  
+    {% block left %}
+ 
+      {% endblock left %}
+
+      
+        
+
+        <div class="row ">
+          <div class="col-12 p-2">
+            {% block main %}
+
+            <div class="container-fluid">
+
+              <div class="container py-5">
+                <!-- Services Heading -->
+                <h2 class="text-center mb-2">Services</h2>
+                
+                <!-- Services Section -->
+                <div class="services-container row justify-content-center text-center">
+                  {% for service in services %}
+                  <div class="col-6 col-md-3 mb-1">
+                    <a class="btn btn-outline-light service-btn d-flex align-items-center justify-content-center text-center" 
+                       href="{% url 'details' name=service.name %}" 
+                       style="height: 35px; width: 120px; font-size: 16px; border-radius: 10px;">
+                      {{ service.name }}
+                    </a>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+
+            <div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
+   
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="{% static "wedding.jpg" %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Wedding</h5>
+                  <p>A bond that will last a lifetime. </p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="{% static "birthday.jpg" %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Birthday</h5>
+                  <p>You’re worth celebrating every day.</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="{% static "Festive.jpg" %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Festive</h5>
+                  <p>Tradition meet celebration in name of festival.</p>
+                </div>
+              </div>
+              <div class="carousel-item"data-bs-interval="4000">
+                <img src="{% static "babyshower.jpg" %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Babyshower & Naming ceremony</h5>
+                  <p>Showering love on the parents-to-be!</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{% static "DJ.jpg" %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>DJ</h5>
+                  <p>Rhythm alchemist turning beats into gold.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+          <hr>
+
+
+          <div class="text-center m-3">
+            <h1 class>Services We Provide</h1>
+            <br>  <br>
+            <div class="row">
+              <div class="col ">
+                <img src="{% static "Icons/celebration.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Entertainment & Artist Management</h2>
+                <p class="text">Be it a comic's hilarious antics, a stomach- hurting stand-up act or an enchanting sufi night, don't let your dose of entertainment take a backseat amidst all the hoopla and shenanigans.</p>
+             
+              </div>
+              <div class="col">
+                <img src="{% static "Icons/palette.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Wedding Creative</h2>
+                <p class="text">A dash of innovation can turn things around in ways more than one. We certainly cannot emphasize our preference enough for the unique and unusual. Trust us with your wedding design and creatives among some funky wedding ideas and concepts, and we promise you a love affair with our ideas.</p>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">  
+                <img src="{% static "Icons/film.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Photography & Cinematography</h2>
+                <p class="text">It's not just enough to create a reel of soft- focus memories in your mind while your once-in-a-life, high-on-adrenaline moments unfold amidst myriad hues. We help you zoom in and capture some visual treasures through the most focused lens.</p>
+              </div>
+              <div class="col"> <img src="{% static "Icons/restaurant.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Food & Beverages</h2>
+                <p class="text">It is no secret that a gourmandizing platter and glasses oozing palate-satisfying beverages form the highlight of any Indian wedding. In keeping with the spirit of the occasion, we bet to delight your taste buds with the best catering deals only to make the experience more appetizing. Hungry, already?</p>
+               </div>
+            </div>
+            <div class="row">
+              <div class="col"><img src="{% static "Icons/hand.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Ancillary Services</h2>
+                <p class="text">Putting wedding events, successfully, together requires much more than just having the essentials in place. We, at Ravishing Events, provide a host of services, which include designing and styling wedding dresses, customizing wedding invitations and providing personalized communication among others.</p>
+              </div>
+              <div class="col"> <img src="{% static "Icons/food-service.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Hospitality</h2>
+                <p class="text">Whoever claims to not enjoy a warm wedding reception and a fair bit of indulgence aces the lie game! Well, all we are trying to say is that you can never go wrong with showering your guests with some privileges and exclusivity. And we just help you ensure that your guests get a supreme taste of the grandeur that they are meant to experience.</p>
+               </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <img src="{% static "Icons/giftbox.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Wedding Gifts & Hampers</h2>
+                <p class="text">A box of exotic cookies for a bridal shower or a hamper with assorted goodies for the wedding can be beautiful way to show love to your guests. Let us help you pick the choicest contents and add raw wedding fuzziness to those fine, delightful tokens.</p>
+              </div>
+              <div class="col">
+                <img src="{% static "Icons/smartphone.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Wedding Communications</h2>
+                <p class="text">How about letting every guest in on the smallest of details about your plans for your elaborate marriage celebrations without making any frenzied, last-minute goof-ups? Having an effective communication plan in place plays a crucial role in making your dream of bringing a fairy tale to life</p>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col">
+                <img src="{% static "Icons/decoration.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Decor</h2>
+                <p class="text">With our in-house 2D and 3D designers, you can expect your wedding decorations to be straight out of your dreams. Let our promise of excellence extend into the wedded glory of a vibrant venue and dazzling decor.</p>
+              </div>
+              <div class="col">
+                <img src="{% static "Icons/airplane.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Destination Wedding & Venue</h2>
+                <p class="text">It's the venue of your big day that best defines the beauty and grandeur of the occasion. How about indulging your wild fantasies and deep desires with some apt and befitting deals?</p>
+              </div>
+            </div>
+            
+          </div>
+
+          <hr>
+
+          <div class="text-center m-3">
+            <h1 class>Why Ravishing Events ?</h1>
+            <br>  <br>
+            <div class="row ">
+              <div class="col">
+                <img src="{% static "Icons/cash.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Affordable Prize</h2>
+                <p class="text">We Provide Excellent Decorations at Pocket Friendly Cost with Great Customer Service.</p>
+              
+              </div>
+              <div class="col">
+                <img src="{% static "Icons/support.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Best Service</h2>
+                <p class="text">From event planners and production teams to audiovisual technicians and catering services, you can find a wide range of skilled professionals to help organize and execute your event successfully.</p>
+             
+              </div>
+            </div>
+            <br>
+            <div class="row ">
+              <div class="col">
+                
+                <img src="{% static "Icons/handshake.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">Full Transparency</h2>
+                <p class="text">We offer value for money decorations and fulfill all the commitments on time and keep all the deal transparent.</p>
+
+              </div>
+              <div class="col">
+                
+                <img src="{% static "Icons/clock.png" %}" alt="Affordable Decorations" class="image" height="70px">
+                <h2 class="heading">On Schedule</h2>
+                <p class="text">We handle any last-minute changes or emergencies that may arise, sparing you from the stress of handling these issues themselves. This on-site management provides you with peace of mind, allowing you to enjoy the event without worrying about the behind-the-scenes details.</p>
+               
+              </div>
+            </div>
+            <br>
+            
+          </div>
+        
+      
+            
+          </div>
+        
+          {% endblock main %}
+        </div>
+     
+    </div>
+  </main>
+
+
+
+  <footer class="footer" >
+    
+    <div class="d-flex flex-wrap justify-content-between align-items-center border-top m ms-3 me-3">
+      <p class="col-md-4 mb-0 text-muted">
+        <img src="/static/Icons/RavishingEvents.png" alt="RavishingEvents" width="130px">
+      </p>
+  
+      <ul class="nav col-md-4 justify-content-center">
+        <li class="nav-item"><b>Contact Us :</b> +91 9511935519, +91 9321329781 </li>
+        <br>
+        <li class="nav-item"><a href="https://www.instagram.com/ravishing__events?igsh=cXkxNGd5aXM0Zjdn" target="_blank" class="nav-link px-2 text-muted"><b>Instagram</b></a></li>
+        <li class="nav-item"><a href="https://wa.me/919511935519?text=Hello%20there!%20I%20would%20like%20to%20chat." class="nav-link px-2 text-muted" target="_blank"><b>Whatsapp</b></a></li>
+        
+        <li class="nav-item"><a href="/about/" class="nav-link px-2 text-muted"><b>About</b></a></li>
+      </ul>   
+    </div>
+      
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

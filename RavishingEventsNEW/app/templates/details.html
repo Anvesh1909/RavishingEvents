@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block main %}
+<div class="card">
+  <div class="card-body">
+    <div class="text text-center shadow p-1 mb-2" style="background-color: rgb(142, 122, 181)">
+      <h1>
+        {{ service_name }} 
+        {% if service_name == "Haldi" %} & Mehndi{% endif %}
+        {% if service_name == "Babyshower" %} & Naming Ceremony{% endif %}
+        Details
+      </h1>
+    </div>
+
+    <p class="text-start m-3">{{ description }}</p>
+
+    <a href="https://wa.me/919511935519?text=Hello I would like to know about {{ service_name }} service."
+       class="btn btn-primary" target="_blank">Get Details</a>
+
+    {% if images %}
+    <h2>Additional Images</h2>
+    <div class="row">
+      {% for image in images %}
+      <div class="col col-12 col-lg-6">
+        <img class="image border border-dark shadow mb-5 bg-body-tertiary rounded"
+             src="{{ image.image.url }}" alt="Image">
+        <p>{{ image.service.name }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock main %}

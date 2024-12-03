@@ -1,0 +1,52 @@
+body {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+}
+
+.services-container {
+  margin-top: 20px;
+}
+
+.service-btn {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+  background-color: #fff;
+  color: #2575fc;
+}
+
+.carousel-inner img {
+  border-radius: 10px;
+}
+
+.carousel-caption h5 {
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+h1 {
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
